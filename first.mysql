@@ -45,3 +45,6 @@ INSERT INTO topic(title, description, created, author, profile)
           
 # topic의 모든 걸 출력
 SELECT * FROM topic;
+
+# topic에 있는 id,title,created,author 열을 출력하고 author이 'egoing'인 것만 출력을 하는데 그 중에서 id를 내림차순으로 출력을 한다. 2개까지만
+SELECT id, title, created, author, FROM topic WHERE author = 'egoing' ORDER BY id DESC LIMIT 2;
