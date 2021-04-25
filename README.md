@@ -1,1 +1,1 @@
-# mysqlstudy
+# mysql을 공부하는 장소입니다.
