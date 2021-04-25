@@ -1,0 +1,47 @@
+# 생활코딩에서 배운 내용을 토대로 정리.
+
+/*
+  1970년 에드거 프랭크 테드 키드는 IBM에서 관계형 데이터 베이스를 처음으로 고안했다.
+  SQL은 Structured Query Language의 약자이다.
+  CRUD는 CREATE READ UPDATE DELETE의 약자이다.
+*/
+
+# 데이터베이스를 만든다.
+CREATE DATABASE tmp;
+
+# 데이터베이스 삭제
+DROP DATABASE tmp;
+
+# 데이터베이스 보기
+SHOW DATABASES;
+
+# 어떤 데이터베이스에 접근할 것인가? 
+USE tmp;
+
+# 테이블 생성 ( 주석 O )
+CREATE TABLE topic(
+  # NOT NULL  이란 값을 무조건 값을 넣어야 한다는 것을 의미한다. NULL은 반대
+  # AUTO_INCREMENT 는 값을 1씩 증가시킨다는 것을 의미한다. 
+  # 예를들어 id에 값을 대입하지 않았을 때 값을 1씩 증가시켜 저장한다는 의미이다.
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  title VARCHAR(100) NOT NULL,
+  description TEXT NULL,
+  created DATETIME NOT NULL,
+  author VARCHAR(30) NULL,
+  # 메인. 각각의 id 값이 중복되지 않게 함
+  PRIMARY KEY(id)
+);
+              
+/*
+  MYSQL 접속했을 때 쳐야하는 명령어들
+  ./mysql -uroot -p 를 입력하면 입력해야할 패스워드가 나온다.
+  그 패스워드를 입력하면 사용할 데이터베이스 (USE <NAME>;) 를 입력해준뒤
+  테이블을 보고싶다면 SHOW TABLES; 를 입력해주면 된다.
+*/
+
+# 데이터베이스에 값을 넣기
+INSERT INTO topic(title, description, created, author, profile)
+          VALUES('Mysql','Mysql is ...',NOW(),'egoing','developer');
+          
+# topic의 모든 걸 출력
+SELECT * FROM topic;
